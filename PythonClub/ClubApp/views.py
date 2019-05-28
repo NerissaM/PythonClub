@@ -22,19 +22,6 @@ def meetingdetail (request, id):
     }
     return render(request, 'ClubApp/meetingdetail.html', context=context)
 
-def newResource(request):
-    form=ResourceForm
-    if request.method=='POST':
-        form=ResourceForm(request.POST)
-        if form.is_valid():
-            post=form.save(commit=True)
-            post.save()
-            form=ResourceForm()
-
-    else: 
-            form=ResourceForm()
-    return render(request, 'ClubApp/newresource.html', {'form' : form})
-
 def loginmessage(request):
     return render(request, 'ClubApp/loginmessage.html')
 
