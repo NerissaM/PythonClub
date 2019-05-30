@@ -36,7 +36,7 @@ def newResource(request):
           if form.is_valid():
                post=form.save(commit=True)
                post.save()
-               form=ProductForm()
+               form=ResourceForm()
      else:
-          form=ProductForm()
+          form=ResourceForm()
      return render(request, 'ClubApp/newresource.html', {'form': form})
